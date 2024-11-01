@@ -11,6 +11,8 @@ enum KeyboardKeys {
 
 const typePrompt = 'Type to add / search...'
 
+const addPrompt = (query: string) => `Press Enter to add "${query}"`
+
 function MultiSelect({
   value,
   onChange: setValue,
@@ -42,7 +44,7 @@ function MultiSelect({
   const addOption = React.useMemo(() => {
     if (!query) return
     if (allOptions.find(o => o.value === query)) return
-    return { label: `Press Enter to add "${query}"`, value: query }
+    return { label: addPrompt(query), value: query }
   }, [allOptions, query])
 
   React.useEffect(() => {
@@ -82,11 +84,19 @@ function MultiSelect({
 
   return (
     <div className={classes.container} ref={dropdownRef} style={fullWidth ? { width: '100%' } : { width }}>
-      <div className={isOpen ? `${classes.open} ${classes.input}` : classes.input} onClick={handleInputClick}>
+      <div className={isOpen ? `${classes.open} ${classes.input}` : classes.input} onMouseDown={handleInputClick}>
         <div className={classes.label}>
           {valueOptions.length
             ? valueOptions.map(o => o.label).join(', ')
-            : <input autoFocus={isOpen} ref={inputRef} placeholder={isOpen ? typePrompt : label} value={query} onChange={handleInputChange} onKeyDown={handleEnterKey} onFocus={() => setIsOpen(true)} />
+            : <input
+              value={query}
+              ref={inputRef}
+              autoFocus={isOpen}
+              placeholder={isOpen ? typePrompt : label}
+              onChange={handleInputChange}
+              onKeyDown={handleEnterKey}
+              onFocus={() => setIsOpen(true)}
+            />
           }
         </div>
         <div className={classes.arrow}>

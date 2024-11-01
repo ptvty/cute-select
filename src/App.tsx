@@ -28,8 +28,7 @@ function App() {
       label='Favorite activities'
       options={options}
     />
-    <div>
-      <br />
+    <div style={{marginTop: '24rem'}}>
       <p>Value</p>
       <pre>
         {JSON.stringify(value)}
