@@ -1,0 +1,119 @@
+@use 'sass:color';
+
+$dark-color: #71767c;
+$dark-border-color: color.adjust($dark-color, $lightness: 40%);
+$checked-color: #f2f4ff;
+$hover-color: color.adjust($checked-color, $lightness: 1%);
+
+
+:root {
+    --active-color: #566ec8;
+    --shad-color: #dbe2ff;
+    --hover-color: #f2f4ff;
+    --bg-color: #fff;
+}
+
+.container {
+    position: relative;
+    color: var(--dark-color);
+    cursor: pointer;
+}
+
+.dropdown {
+    background-color: var(--bg-color);
+    position: absolute;
+    width: 100%;
+    max-height: 16rem;
+    overflow-y: auto;
+    border-radius: 1rem;
+    top: 2rem;
+    opacity: .5;
+    visibility: hidden;
+    box-shadow: 0 0 0 1px $dark-border-color;
+    transition: all .05s;
+    padding: .5rem 0;
+}
+
+.dropdown.open {
+    visibility: visible;
+    opacity: 1;
+    top: 2.4rem;
+    transition: all .1s ease-out;
+}
+
+.dropdown>li {
+    display: flex;
+    padding: .5rem;
+    margin: .1rem .5rem;
+    border-radius: .7rem;
+}
+
+.dropdown>li .label {
+    flex: 1;
+}
+
+.dropdown>li:hover {
+    background-color: $hover-color;
+}
+
+.dropdown>li.checked {
+    background-color: $checked-color;
+    color: var(--active-color);
+}
+
+.dropdown>li .checkMark {
+    position: relative;
+    top: 4px;
+}
+
+.dropdown>li:not(.checked) .checkMark {
+    visibility: hidden;
+}
+
+.input {
+    background-color: var(--bg-color);
+    display: flex;
+    padding: .5rem .7rem;
+    border-radius: .7rem;
+    border: solid 1px $dark-border-color;
+    transition: all .2s;
+}
+
+.input.open {
+    border: solid 1px var(--active-color);
+    box-shadow: 0 0 0 .25rem var(--shad-color);
+}
+
+.input input {
+    background-color: transparent;
+    color: var(--dark-color);
+    width: 100%;
+    font-size: 1rem;
+    font-family: inherit;
+    border: none;
+    outline: none;
+}
+
+.input .label {
+    flex: 1;
+    padding-right: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.input .arrow {
+    transform: scale(1, 1);
+    position: relative;
+    top: 3px;
+    transition: all .2s;
+}
+
+.input.open .arrow {
+    transform: scale(-1, -1);
+    top: -2px;
+}
+
+.inputLabel span {
+    vertical-align: text-bottom;
+}

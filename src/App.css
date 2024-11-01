@@ -1,0 +1,17 @@
+body {
+  background-color: #fafafa;
+  color: #333;
+}
+
+.demo {
+  padding: 4rem 0;
+  width: 280px;
+  margin: auto;
+}
+
+.arimo-font {
+  font-family: "Arimo", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
