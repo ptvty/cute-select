@@ -8,9 +8,9 @@ This is a basic project to demonstrate how you can quickly create a reusable sel
 
 ## Live Demo
 
-You can see the demo, hosted on GitHub Pages by following the [Demo Link here](https://ptvty.github.io/cute-multi-select).
+You can see the demo, hosted on GitHub Pages by following the [Demo Link here](https://ptvty.github.io/cute-select).
 
-You can also check the component in isolation [Here in Storybook](https://ptvty.github.io/cute-multi-select/storybook-static).
+You can also check the component in isolation [Here in Storybook](https://ptvty.github.io/cute-select/storybook-static).
 
 ## Tech Stack
 
