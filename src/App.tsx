@@ -21,17 +21,17 @@ function App() {
   const [value, setValue] = React.useState<SelectValue>([])
 
   return (<div className='arimo-font demo'>
-    <MultiSelect
-      value={value}
-      onChange={setValue}
-      fullWidth
-      label='Favorite activities'
-      options={options}
-    />
-    <div style={{marginTop: '24rem'}}>
-      <p>Value</p>
+    <div style={{paddingTop: '4rem'}} >
+      <MultiSelect
+        value={value}
+        onChange={setValue}
+        label='Favorite activities'
+        options={options}
+      />
+    </div>
+    <div style={{ backgroundColor: '#222', color: 'rgb(106, 255, 123)', paddingTop: '3rem' }}>
       <pre>
-        {JSON.stringify(value)}
+        {JSON.stringify({ value }, null, 2)}
       </pre>
     </div>
   </div>)
