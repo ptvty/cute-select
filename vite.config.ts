@@ -28,5 +28,5 @@ export default defineConfig({
       },
     },
   },
-  publicDir: './',
+  base: '',
 })
